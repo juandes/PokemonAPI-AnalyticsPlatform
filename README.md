@@ -72,4 +72,4 @@ as a Boolean field.
 
 ## Project
 
-This repository contains a single Python file (the API) and the current Pokemon database in a JSON file
+This repository contains a single Python file (the API) and an export of the collection (pokemondataset.json).
