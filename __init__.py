@@ -5,6 +5,8 @@ from bson.json_util import dumps
 import pymongo
 
 app = Flask(__name__)
+#app.config['MONGO_DBNAME'] = 'pokemon'
+#mongo = PyMongo(app)
 
 client = pymongo.MongoClient()
 db = client.pokemon
@@ -29,28 +31,25 @@ pokemon_fields = {'name': fields.String, 'national_id': fields.Integer}
 class NationalPokedexAPI(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
-        #self.reqparse.add_argument('title', type=str, required=True, help='No',
-         #                          location='json')
-        #self.reqparse.add_argument('description', type=str, default="",
-         #                          location='json')
+        self.reqparse.add_argument('title', type=str, required=True, help='No',
+                                   location='json')
+        self.reqparse.add_argument('description', type=str, default="",
+                                   location='json')
         super(NationalPokedexAPI, self).__init__()
 
     def get(self):
-        """
-        GET the complete national Pokedex
-        :return: Complete national Pokedex
-        """
         return [pokemon for pokemon in
                 collection.find().sort("national_id", pymongo.ASCENDING)]
+        #return [x for x in mongo.db.pokedex.find()]
 
 
 api.add_resource(NationalPokedexAPI,
-                 '/Pokemon/api/v1.0/pokemon/pokedex', endpoint='pokedex')
+                 '/MyData/api/v1.0/pokemon/pokedex', endpoint='pokedex')
 
 
 @app.route('/')
 def index():
-    return "Hi"
+    return "Hello, World!"
 
 
 if __name__ == '__main__':
