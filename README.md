@@ -67,7 +67,7 @@ This is a work in progress. I will be adding new features to the API in the futu
 
 ## Things I have in mind
 
-- Make a field called egg_group and add the respective egg group of each Pokemon, instead of having all of them
+- Make a field named egg_group with the egg group of each Pokemon, instead of having all the egg groups
 as a Boolean field.
 
 ## Project
