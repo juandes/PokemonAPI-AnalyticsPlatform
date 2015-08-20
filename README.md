@@ -6,9 +6,9 @@ A simple API for getting Pokemon data. Written in Python using Flask-RESTful and
 
 ## API Reference
 
-#### Get regional Pokedex
+#### Get national Pokedex
 
-Return the regional Pokedex (718 Pokemon) in JSON format.
+Return the national Pokedex (718 Pokemon) in JSON format.
 
 **GET** /pokemon/api/v1.0/pokedex 
 
@@ -57,7 +57,7 @@ Each object these fields:
 
 #### Get regional Pokedex
 
-Returns the Pokedex of the given region (Kanto, Johto, Hoenn, Sinnoh, Unova and Kalos).
+Returns the Pokedex of a specific region (Kanto, Johto, Hoenn, Sinnoh, Unova and Kalos).
 
 **GET** /pokemon/api/v1.0/pokedex/{region}
 
