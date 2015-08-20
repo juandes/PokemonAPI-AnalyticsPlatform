@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pokemon API using Python, Flask and MongoDB by juandes</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pokemon API using Python, Flask and MongoDB</h1>
+        <p>A simple API for getting Pokemon data. Written in Python using Flask-RESTful and MongoDB (alongside PyMongo)</p>
+
+        <p class="view"><a href="https://github.com/juandes/PokemonAPI-Flask">View the Project on GitHub <small>juandes/PokemonAPI-Flask</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/juandes/PokemonAPI-Flask/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/juandes/PokemonAPI-Flask/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/juandes/PokemonAPI-Flask">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="pokemon-api-using-python-flask-and-mongodb" class="anchor" href="#pokemon-api-using-python-flask-and-mongodb" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pokemon API using Python, Flask and MongoDB</h1>
+
+<h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<hr>
+
+<p>A simple API for getting Pokemon data. Written in Python using Flask-RESTful and MongoDB (alongside PyMongo).</p>
+
+<h2>
+<a id="api-reference" class="anchor" href="#api-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Reference</h2>
+
+<hr>
+
+<h3>
+<a id="get-national-pokedex" class="anchor" href="#get-national-pokedex" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get national Pokedex</h3>
+
+<p>Returns the national Pokedex (718 Pokemon) in JSON format.</p>
+
+<p><strong>GET</strong> /pokemon/api/v1.0/pokedex </p>
+
+<p>Each object these fields:</p>
+
+<ul>
+<li>name</li>
+<li>national_id</li>
+<li>primary_type</li>
+<li>height</li>
+<li>weight</li>
+<li>region</li>
+<li>base_experience</li>
+<li>catch_rate</li>
+<li>hp</li>
+<li>attack</li>
+<li>special_attack</li>
+<li>defense</li>
+<li>special_defense</li>
+<li>speed</li>
+<li>total</li>
+<li>hp_ev</li>
+<li>attack_ev</li>
+<li>special_attack_ev</li>
+<li>defense_ev</li>
+<li>special_defense_ev</li>
+<li>speed_ev</li>
+<li>dragon_egg_group</li>
+<li>mineral_egg_group</li>
+<li>amorphous_egg_group</li>
+<li>field_egg_group</li>
+<li>undiscovered_egg_group</li>
+<li>flying_egg_group</li>
+<li>water1_egg_group</li>
+<li>water2_egg_group</li>
+<li>water3_egg_group</li>
+<li>humanlike_egg_group</li>
+<li>ditto_egg_group</li>
+<li>grass_egg_group</li>
+<li>secondary_type</li>
+<li>fairy_egg_group</li>
+<li>monster_egg_group</li>
+<li>male_ratio</li>
+<li>egg_cycles</li>
+<li>female_ratio</li>
+<li>base_happiness</li>
+</ul>
+
+<h4>
+<a id="get-regional-pokedex" class="anchor" href="#get-regional-pokedex" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get regional Pokedex</h4>
+
+<p>Returns the Pokedex of a specific region (Kanto, Johto, Hoenn, Sinnoh, Unova and Kalos).</p>
+
+<p><strong>GET</strong> /pokemon/api/v1.0/pokedex/{region}</p>
+
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<hr>
+
+<p>This is a work in progress. I will be adding new features to the API in the future. Also, the API is not available online yet.</p>
+
+<h2>
+<a id="things-i-have-in-mind" class="anchor" href="#things-i-have-in-mind" aria-hidden="true"><span class="octicon octicon-link"></span></a>Things I have in mind</h2>
+
+<hr>
+
+<ul>
+<li>Make a field named egg_group with the egg group of each Pokemon, instead of having all the egg groups
+as a Boolean field.</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/juandes">juandes</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
