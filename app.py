@@ -20,10 +20,7 @@ DEFAULT_REPRESENTATIONS = {'application/json': output_json}
 api = Api(app)
 api.representations = DEFAULT_REPRESENTATIONS
 
-<<<<<<< HEAD
-=======
 # Service
->>>>>>> db8a3547c96ad639755fa5fd52c21caa0b58fceb
 
 class NationalPokedexAPI(Resource):
     def __init__(self):
