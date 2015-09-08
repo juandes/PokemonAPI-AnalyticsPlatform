@@ -1,8 +1,7 @@
-from flask.ext.restful import Api
-from flask import Flask, make_response
-from flask.ext.restful import Resource, reqparse, fields
-from bson.json_util import dumps
 import pymongo
+from flask import Flask, make_response
+from flask.ext.restful import Api, Resource, reqparse
+from bson.json_util import dumps
 
 app = Flask(__name__)
 
@@ -21,18 +20,10 @@ DEFAULT_REPRESENTATIONS = {'application/json': output_json}
 api = Api(app)
 api.representations = DEFAULT_REPRESENTATIONS
 
-# Service
-
-pokemon_fields = {'name': fields.String, 'national_id': fields.Integer}
-
 
 class NationalPokedexAPI(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
-        #self.reqparse.add_argument('title', type=str, required=True, help='No',
-         #                          location='json')
-        #self.reqparse.add_argument('description', type=str, default="",
-         #                          location='json')
         super(NationalPokedexAPI, self).__init__()
 
     def get(self):
@@ -41,11 +32,31 @@ class NationalPokedexAPI(Resource):
         :return: Complete national Pokedex
         """
         return [pokemon for pokemon in
-                collection.find().sort("national_id", pymongo.ASCENDING)]
+                collection.find().sort('national_id', pymongo.ASCENDING)]
+
+
+class RegionalPokedexAPI(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('region', type=str, location='json')
+        super(RegionalPokedexAPI, self).__init__()
+
+    def get(self, region):
+        """
+        GET a regional Pokedex
+        :param region: Pokemon region
+        :return: Pokedex for region
+        """
+        return [pokemon for pokemon in
+                collection.find({'region': region})
+                    .sort('national_id', pymongo.ASCENDING)]
 
 
 api.add_resource(NationalPokedexAPI,
-                 '/Pokemon/api/v1.0/pokemon/pokedex', endpoint='pokedex')
+                 '/pokemon/api/v1.0/pokedex', endpoint='pokedex')
+api.add_resource(RegionalPokedexAPI,
+                 '/pokemon/api/v1.0/pokedex/<string:region>',
+                 endpoint='region')
 
 
 @app.route('/')
