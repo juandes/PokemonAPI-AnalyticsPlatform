@@ -23,9 +23,6 @@ api.representations = DEFAULT_REPRESENTATIONS
 
 # Service
 
-pokemon_fields = {'name': fields.String, 'national_id': fields.Integer}
-
-
 class NationalPokedexAPI(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
