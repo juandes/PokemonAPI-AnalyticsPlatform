@@ -58,4 +58,4 @@ This is a work in progress. I will be adding new features to the API in the futu
 
 ## Project
 
-This repository contains a single Python file (the API) and an export of the collection (pokemondataset.json).
+This repository contains a single the API (app.py), several scripts, and an export of the collection (pokemondataset.json).
