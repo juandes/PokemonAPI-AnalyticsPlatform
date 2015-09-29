@@ -35,21 +35,7 @@ Each object these fields:
 - defense_ev
 - special_defense_ev
 - speed_ev
-- dragon_egg_group
-- mineral_egg_group
-- amorphous_egg_group
-- field_egg_group
-- undiscovered_egg_group
-- flying_egg_group
-- water1_egg_group
-- water2_egg_group
-- water3_egg_group
-- humanlike_egg_group
-- ditto_egg_group
-- grass_egg_group
-- secondary_type
-- fairy_egg_group
-- monster_egg_group
+- egg_groups
 - male_ratio
 - egg_cycles
 - female_ratio
@@ -67,8 +53,8 @@ This is a work in progress. I will be adding new features to the API in the futu
 
 ## Things I have in mind
 
-- Make a field named egg_group with the egg group of each Pokemon, instead of having all the egg groups
-as a Boolean field.
+- Add an endpoint that returns a specific Pokemon (by name or national id).
+- Add Diancie and Hoopa to the database.
 
 ## Project
 
