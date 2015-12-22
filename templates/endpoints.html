@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>API endpoints reference guide</h2>
+  <br>
+  <h3>Get national Pokedex</h3>
+  <p>Returns the national Pokedex (718 Pokemon) in JSON format</p>
+  <p><b>GET</b> /pokemon/api/v1.0/pokedex</p>
+  <p>Each object (Pokemon) has these fields</p>
+  <ul>
+      <li>name</li>
+      <li>national_id</li>
+      <li>primary_type</li>
+      <li>secondary_type</li>
+      <li>height</li>
+      <li>weight</li>
+      <li>region</li>
+      <li>base_experience</li>
+      <li>catch_rate</li>
+      <li>hp</li>
+      <li>attack</li>
+      <li>special_attack</li>
+      <li>defense</li>
+      <li>special_defense</li>
+      <li>speed</li>
+      <li>total</li>
+      <li>hp_ev</li>
+      <li>attack_ev</li>
+      <li>special_attack_ev</li>
+      <li>defense_ev</li>
+      <li>special_defense_ev</li>
+      <li>speed_ev</li>
+      <li>egg_groups</li>
+      <li>male_ratio</li>
+      <li>egg_cycles</li>
+      <li>female_ratio</li>
+      <li>base_happiness</li>
+  </ul>
+  <h3>Get regional Pokedex</h3>
+  <p>Returns the Pokedex of a specific region (Kanto, Johto, Hoenn, Sinnoh, Unova and Kalos).</p>
+  <p><b>GET</b> /pokemon/api/v1.0/pokedex/{region}</p>
+  <h3>Get Pokemon</h3>
+  <p>Returns an specific Pokemon by either its national id or name</p>
+  <p><b>GET</b> pokemon/api/v1.0/pokemon/{national_id}</p>
+  <p><b>GET</b> pokemon/api/v1.0/pokemon/{name}</p>
+{% endblock %}
