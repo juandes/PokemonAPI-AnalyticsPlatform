@@ -42,12 +42,14 @@ Each Pokemon has the following fields:
 - female_ratio
 - base_happiness
 
-### Get national Pokedex
+#### Get national Pokedex
 Returns the national Pokedex (718 Pokemon) in JSON format.
+
 **GET** /pokemon/api/v1.0/pokedex 
 
 #### Get regional Pokedex
 Returns the Pokedex of a specific region (Kanto, Johto, Hoenn, Sinnoh, Unova and Kalos).
+
 **GET** /pokemon/api/v1.0/pokedex/{region}
 
 ## Notes
