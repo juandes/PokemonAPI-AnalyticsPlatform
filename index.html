@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Pokemon API using Python, Flask and MongoDB by juandes</title>
+    <title>Pokemon API and Analytics using Python, Flask and MongoDB by juandes</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Pokemon API using Python, Flask and MongoDB</h1>
+        <h1>Pokemon API and Analytics using Python, Flask and MongoDB</h1>
         <p>A simple API for getting Pokemon data. Written in Python using Flask-RESTful and MongoDB (alongside PyMongo)</p>
 
         <p class="view"><a href="https://github.com/juandes/PokemonAPI-AnalyticsPlatform">View the Project on GitHub <small>juandes/PokemonAPI-AnalyticsPlatform</small></a></p>
@@ -43,14 +43,16 @@
 
 <hr>
 
-<h3>
-<a id="get-national-pokedex" class="anchor" href="#get-national-pokedex" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get national Pokedex</h3>
+<h4>
+<a id="get-pokemon" class="anchor" href="#get-pokemon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Pokemon</h4>
 
-<p>Returns the national Pokedex (718 Pokemon) in JSON format.</p>
+<p>Returns an specific Pokemon by either its national id or name</p>
 
-<p><strong>GET</strong> /pokemon/api/v1.0/pokedex </p>
+<p><strong>GET</strong> pokemon/api/v1.0/pokemon/{national_id}</p>
 
-<p>Each object has these fields:</p>
+<p><strong>GET</strong> pokemon/api/v1.0/pokemon/{name}</p>
+
+<p>Each Pokemon has the following fields:</p>
 
 <ul>
 <li>name</li>
@@ -81,6 +83,13 @@
 <li>female_ratio</li>
 <li>base_happiness</li>
 </ul>
+
+<h4>
+<a id="get-national-pokedex" class="anchor" href="#get-national-pokedex" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get national Pokedex</h4>
+
+<p>Returns the national Pokedex (718 Pokemon) in JSON format.</p>
+
+<p><strong>GET</strong> /pokemon/api/v1.0/pokedex </p>
 
 <h4>
 <a id="get-regional-pokedex" class="anchor" href="#get-regional-pokedex" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get regional Pokedex</h4>
