@@ -1,5 +1,5 @@
 import pymongo
-from flask import Flask, make_response
+from flask import Flask, make_response, render_template
 from flask.ext.restful import Api, Resource, reqparse
 from bson.json_util import dumps
 
@@ -20,7 +20,8 @@ DEFAULT_REPRESENTATIONS = {'application/json': output_json}
 api = Api(app)
 api.representations = DEFAULT_REPRESENTATIONS
 
-# Service
+
+# Web Service
 
 class NationalPokedexAPI(Resource):
     def __init__(self):
@@ -53,16 +54,60 @@ class RegionalPokedexAPI(Resource):
                     .sort('national_id', pymongo.ASCENDING)]
 
 
+class PokemonByNumber(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('id', type=int, location='json')
+        super(PokemonByNumber, self).__init__()
+
+
+    def get(self, id):
+        """
+        GET a regional Pokedex
+        :param region: Pokemon region
+        :return: Pokedex for region
+        """
+        pokemon = collection.find_one({'national_id': id})
+        if pokemon:
+            return {'status':'ok', 'data':pokemon}
+        else:
+            return {'status':'error'}
+
+class PokemonByName(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('name', type=str, location='json')
+        super(PokemonByName, self).__init__()
+
+    def get(self, name):
+        pokemon = collection.find_one({'name' : name})
+        if pokemon:
+            return {'status': 'ok', 'data': pokemon}
+        else:
+            return {'status': 'error'}
+
+
 api.add_resource(NationalPokedexAPI,
                  '/pokemon/api/v1.0/pokedex', endpoint='pokedex')
 api.add_resource(RegionalPokedexAPI,
-                 '/pokemon/api/v1.0/pokedex/<string:region>',
-                 endpoint='region')
+                 '/pokemon/api/v1.0/pokedex/<string:region>', endpoint='region')
+api.add_resource(PokemonByNumber,
+                 '/pokemon/api/v1.0/pokemon/<int:id>', endpoint='id')
+api.add_resource(PokemonByName,
+                 '/pokemon/api/v1.0/pokemon/<string:name>', endpoint='name')
 
 
 @app.route('/')
 def index():
-    return "Hi"
+    return render_template('template.html')
+
+@app.route('/about')
+def about_page():
+    return render_template('about.html')
+
+@app.route('/endpoints')
+def endpoints_page():
+    return render_template('endpoints.html')
 
 
 if __name__ == '__main__':
