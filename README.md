@@ -1,4 +1,4 @@
-# PokemonAPI-Flask
+# PokemonAPI-AnalyticsPlatform
 
 ## Overview
 
