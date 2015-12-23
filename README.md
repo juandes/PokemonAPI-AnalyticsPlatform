@@ -52,12 +52,8 @@ Returns the Pokedex of a specific region (Kanto, Johto, Hoenn, Sinnoh, Unova and
 
 ## Notes
 
-This is a work in progress. I will be adding new features to the API in the future. Also, the API is not available online yet.
+This is a work in progress. I will be adding new features to the API, and to the platform in general in the future. Also, the API is not available online yet.
 
-## Things I have in mind
-
-- Add an endpoint that returns a specific Pokemon (by name or national id).
-- Add Diancie and Hoopa to the database.
 
 ## Project
 
