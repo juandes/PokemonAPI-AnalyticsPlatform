@@ -10,7 +10,9 @@ The platform is written in Python using Flask and MongoDB (alongside PyMongo).
 
 #### Get Pokemon
 Returns an specific Pokemon by either its national id or name
+
 **GET** pokemon/api/v1.0/pokemon/{national_id}
+
 **GET** pokemon/api/v1.0/pokemon/{name}
 
 Each Pokemon has the following fields:
