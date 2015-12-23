@@ -57,4 +57,4 @@ This is a work in progress. I will be adding new features to the API, and to the
 
 ## Project
 
-This repository contains a single the API (app.py), several scripts, and an export of the collection (pokemondataset.json).
+This repository contains a single file (app.py) that has the web service code and the navigation of the application, several scripts used to transform the data, a template folder with the HTML code of the application,  and an export of the collection (pokemondataset.json).
