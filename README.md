@@ -17,6 +17,7 @@ Each object these fields:
 - name
 - national_id
 - primary_type
+- secondary_type
 - height
 - weight
 - region
