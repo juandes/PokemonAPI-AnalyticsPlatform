@@ -2,7 +2,9 @@
 
 ## Overview
 
-A simple API for getting Pokemon data. Written in Python using Flask-RESTful and MongoDB (alongside PyMongo).
+My vision for this project is to have a data analysis platform that uses Pokemon data. So far it just has an API for getting Pokemon data. The long term goal is to have a more complete platform containing statistics, visualization, and machine learning applications about the series.
+
+The platform is written in Python using Flask and MongoDB (alongside PyMongo).
 
 ## API Reference
 
