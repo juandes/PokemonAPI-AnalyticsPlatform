@@ -50,6 +50,14 @@ Returns the Pokedex of a specific region (Kanto, Johto, Hoenn, Sinnoh, Unova and
 
 **GET** /pokemon/api/v1.0/pokedex/{region}
 
+#### Get Pokemon
+
+Returns an specific Pokemon by either its national id or name
+
+**GET** pokemon/api/v1.0/pokemon/{national_id}
+
+**GET** pokemon/api/v1.0/pokemon/{name}
+
 ## Notes
 
 This is a work in progress. I will be adding new features to the API, and to the platform in general in the future. Also, the API is not available online yet.
