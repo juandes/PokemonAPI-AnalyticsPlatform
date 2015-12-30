@@ -1,5 +1,7 @@
 import pymongo
-from flask import Flask, make_response, render_template
+import json
+from engine import *
+from flask import Flask, jsonify, make_response, render_template
 from flask.ext.restful import Api, Resource, reqparse
 from bson.json_util import dumps
 
@@ -50,7 +52,7 @@ class RegionalPokedexAPI(Resource):
         :return: Pokedex for region
         """
         return [pokemon for pokemon in
-                collection.find({'region': region})
+                collection.find({'region': region.capitalize()})
                     .sort('national_id', pymongo.ASCENDING)]
 
 
@@ -80,7 +82,7 @@ class PokemonByName(Resource):
         super(PokemonByName, self).__init__()
 
     def get(self, name):
-        pokemon = collection.find_one({'name' : name})
+        pokemon = collection.find_one({'name' : name.capitalize()})
         if pokemon:
             return {'status': 'ok', 'data': pokemon}
         else:
@@ -108,6 +110,15 @@ def about_page():
 @app.route('/endpoints')
 def endpoints_page():
     return render_template('endpoints.html')
+
+@app.route('/pokemon')
+def all_pokemon_page():
+    return render_template('pokemon.html', pokemon_dump = [pokemon for pokemon in find_pokemon_names(collection)])
+
+#@app.route('/pokemon/<string:pokemon_name>/')
+#def pokemon_page(pokemon_name):
+#    return 'Hi'
+
 
 
 if __name__ == '__main__':
