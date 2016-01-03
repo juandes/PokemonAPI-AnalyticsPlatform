@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>List of Pokemon</h2>
+  <ul>
+      {% for n in pokemon_dump %}
+      <li><a href="pokemon/{{n.name}}"><h4>{{n.national_id|int}}. {{n.name}}</h4></a></li>
+      {% endfor %}
+   </ul>
+{% endblock %}

@@ -1,4 +1,5 @@
 import pymongo
+from bson import json_util
 import json
 from engine import *
 from flask import Flask, jsonify, make_response, render_template
@@ -75,6 +76,7 @@ class PokemonByNumber(Resource):
         else:
             return {'status':'error'}
 
+
 class PokemonByName(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
@@ -111,15 +113,13 @@ def about_page():
 def endpoints_page():
     return render_template('endpoints.html')
 
-@app.route('/pokemon')
+@app.route('/pokedex')
 def all_pokemon_page():
-    return render_template('pokemon.html', pokemon_dump = [pokemon for pokemon in find_pokemon_names(collection)])
+    return render_template('pokedex.html', pokemon_dump = [pokemon for pokemon in find_pokemon_names(collection)])
 
-#@app.route('/pokemon/<string:pokemon_name>/')
-#def pokemon_page(pokemon_name):
-#    return 'Hi'
-
-
+@app.route('/pokemon/<string:pokemon_name>/')
+def pokemon_page(pokemon_name):
+    return render_template('pokemon.html', pokemon_data = find_pokemon(pokemon_name, collection))
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,9 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
-  <h2>List of Pokemon</h2>
-  <ul>
-      {% for n in pokemon_dump %}
-      <li><h4>{{n.national_id|int}}. {{n.name}}</h4></li>
-      {% endfor %}
-   </ul>
+  <h2>{{pokemon_data.name}}</h2>
+  <p>National ID: {{pokemon_data.national_id}}</p>
+  <p>Primary type: {{pokemon_data.primary_type}}</p>
+  <p>Secondary type: {{pokemon_data.primary_type}}</p>
+  <p>Attack: {{pokemon_data.attack}}</p>
+  <p>Weight: {{pokemon_data.weight}}</p>
+  <p>Height: {{pokemon_data.national_id}}</p>
+  <p>Original region: {{pokemon_data.national_id}}</p>
+  <p>Base experience: {{pokemon_data.national_id}}</p>
+  <p>HP: {{pokemon_data.hp}}</p>
+  <p>Attack: {{pokemon_data.attack}}</p>
+  <p>Special Attack: {{pokemon_data.special_attack}}</p>
+  <p>Defense: {{pokemon_data.defense}}</p>
+  <p>Special Defense: {{pokemon_data.special_defense}}</p>
+  <p>Speed: {{pokemon_data.speed}}</p>
+  <p>HP EV: {{pokemon_data.hp_ev}}</p>
+  <p>Attack EV: {{pokemon_data.attack_ev}}</p>
+  <p>Sp. Attack EV: {{pokemon_data.special_attack_ev}}</p>
+  <p>Defense EV: {{pokemon_data.defense_ev}}</p>
+  <p>Sp. Defense EV: {{pokemon_data.special_defense_ev}}</p>
+  <p>Speed EV: {{pokemon_data.speed_ev}}</p>
+
 {% endblock %}
