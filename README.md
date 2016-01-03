@@ -56,7 +56,7 @@ Returns the Pokedex of a specific region (Kanto, Johto, Hoenn, Sinnoh, Unova and
 
 ## Notes
 
-This is a work in progress. I will be adding new features to the API, and to the platform in general in the future. A development version is available [here](agile-shelf-4613.herokuapp.com).
+This is a work in progress. I will be adding new features to the API, and to the platform in general in the future. A development version is available [here](http://agile-shelf-4613.herokuapp.com).
 
 
 ## Project
