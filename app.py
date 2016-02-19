@@ -96,7 +96,7 @@ api.add_resource(NationalPokedexAPI,
 api.add_resource(RegionalPokedexAPI,
                  '/pokemon/api/v1.0/pokedex/<string:region>', endpoint='region')
 api.add_resource(PokemonByNumber,
-                 '/pokemon/api/v1.0/pokemon/<int:id>', endpoint='id')
+                 '/pokemon/api/v1.0/pokemon/by-id/<int:id>', endpoint='id')
 api.add_resource(PokemonByName,
                  '/pokemon/api/v1.0/pokemon/<string:name>', endpoint='name')
 
