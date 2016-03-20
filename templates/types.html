@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Pokemon types</h2>
+  <p>Types are properties for Pokemon and their moves. (write more here)
+      
+     A Pokemon may have either one or two types (dual type Pokemon), however their moves are still assigned
+     to one type.
+  </p>
+  <ul>
+      {% for n in types %}
+      <li><a href="type/{{n.type}}"><h4>{{n.type}}</h4></a></li>
+      {% endfor %}
+  </ul>
+{% endblock %}

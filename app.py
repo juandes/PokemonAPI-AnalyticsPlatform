@@ -11,6 +11,7 @@ app = Flask(__name__)
 client = pymongo.MongoClient()
 db = client.pokemon
 collection = db.pokedex
+types_collection = db.types
 
 
 def output_json(obj, code, headers=None):
@@ -116,6 +117,14 @@ def endpoints_page():
 @app.route('/pokedex')
 def all_pokemon_page():
     return render_template('pokedex.html', pokemon_dump = [pokemon for pokemon in find_pokemon_names(collection)])
+    
+@app.route('/types')
+def types_page():
+    return render_template('types.html', types = [type for type in get_all_types(types_collection)])
+    
+@app.route('/type/<string:type>/')
+def type_page(type):
+    return render_template('type.html', type = type, pokemons_by_type = [pokemon for pokemon in find_pokemon_by_type(type, collection)])
 
 @app.route('/pokemon/<string:pokemon_name>/')
 def pokemon_page(pokemon_name):
